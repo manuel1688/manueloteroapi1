@@ -1,0 +1,211 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    padding-top: 30px;
+}
+
+#signInLink, #signOutLink {
+    cursor: pointer;
+}
+
+/* To disable the Google+ Sign In Button, but gapi.signin.render should be invoked to store the credential
+   if that is stored in cookie. */
+#signInButton iframe {
+    display: none;
+}
+
+.required {
+    color: red;
+}
+
+.dismiss-messages {
+    cursor: pointer;
+}
+
+/* In a small screen, make the alert message sticky to the top */
+@media (max-width: 768px) {
+    #messages.alert, #rootMessages.alert {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 65px;
+        z-index: 1000;
+    }
+}
+
+.form-group-condensed {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.label-separated {
+    margin-right: 8px;
+}
+
+.spinner {
+    position: fixed;
+    top: 70px;
+    z-index: 9999;
+}
+
+#signInButton {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+#profile-container {
+    float: right;
+    font-size: 85%;
+}
+
+#profile img {
+    max-height: 35px;
+    width: auto;
+    vertical-align: middle;
+}
+
+#show-conferences-tab {
+    margin-bottom: 20px;
+}
+
+ul#filters {
+    list-style: none;
+    padding-left: 0px;
+    font-size: 85%;
+}
+
+ul#filters span.glyphicon-remove {
+    font-size: 80%;
+}
+
+ul#conferences-list {
+    list-style: none;
+}
+
+.intro-header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #f8f8f8;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    background: url(/img/meeting-room.jpg) no-repeat center center;
+    background-size: cover;
+    text-align: center;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    vertical-align: middle;
+}
+
+.section-a {
+    padding: 50px 0;
+}
+
+/* RESERVA CSS -------------------------------*/ /*----------------- RESERVA CSS */
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: black;
+    background-color: #777 !important;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:notfocus {
+    background-color: transparent; !important;
+}
+
+.contenedorDelMenuPrincipal{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 6px;
+}
+
+.btn {
+    
+    border-radius: 4px !important;
+}
+
+.fondo{
+ 
+}
+
+.contenedorUno{
+  text-align: center;
+   background: url(/img/thumb_IMG_0833_1024.jpg) no-repeat center;
+   height: 768px;
+}
+
+.logo{
+   background: url(/img/logoVistaMar.jpg) no-repeat center;
+    width: 120px !important;
+    height: 80px !important;
+    background-size: 120px 80px;
+    margin-top: 30px;
+
+}
+
+.btn-default{
+    background-color: #D63A66;
+}
+
+.botonIdioma:hover{
+    background-color: #D63A66 !important;
+}
+
+.btnContacteneos {
+
+    background-color: #D63A66;
+    border-color: #D63AA66;
+    border: 0px;
+    color: white;
+    opacity: 0.8;
+}
+
+.btnContacteneos:hover{
+    background-color: #D63A66 !important;
+}
+
+.sinOpacity{
+  opacity: 1;
+}
+
+.navbar{
+  opacity: 0.8;
+  border-radius: 4px !important;
+      margin-top: 40px;
+}
+
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+
+.textoDelOpcionEnElMenu{
+  color:black;
+}
+
+.textoBlanco{
+  color:white;
+}
+
+.active a{
+  background-color: gray !important;
+}
+
+.active a span{
+  color: white !important;
+}
+
+#btnReservar{
+  font-size: 22pt;
+}
+
+.flagIcon{
+  width: 20px;
+}
+
+.btn-groupFlags{
+  opacity: 0.77;
+}
