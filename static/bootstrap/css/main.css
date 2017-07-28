@@ -133,12 +133,22 @@ ul#conferences-list {
 
 .contenedorUno{
   text-align: center;
-   background: url(/img/thumb_IMG_0833_1024.jpg) no-repeat center;
-   height: 768px;
+   background: url(/img/thumb_IMG_0833_1024.png) no-repeat center;
+   height: 400px;
+    background-size: 80% 400px;
 }
 
 .logo{
    background: url(/img/logoVistaMar.jpg) no-repeat center;
+    width: 120px !important;
+    height: 80px !important;
+    background-size: 120px 80px;
+    margin-top: 30px;
+
+}
+
+.shower{
+   background: url(/img/shower.jpg) no-repeat center;
     width: 120px !important;
     height: 80px !important;
     background-size: 120px 80px;
@@ -209,3 +219,8 @@ ul#conferences-list {
 .btn-groupFlags{
   opacity: 0.77;
 }
+
+
+
+
+

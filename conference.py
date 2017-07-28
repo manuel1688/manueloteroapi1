@@ -145,6 +145,11 @@ class ConferenceApi(remote.Service):
             user_id = 'manuel.otero.16@gmail.com'
             print user_id
             print request
+            print '### --- RESERVACIONES: --- ###'
+          
+
+        
+
             if not request.name:
                 raise endpoints.BadRequestException("Conference 'name' field required")
 
@@ -152,7 +157,17 @@ class ConferenceApi(remote.Service):
             data = {field.name: getattr(request, field.name) for field in request.all_fields()}
             
 
-         
+            startDate = datetime.strptime(data['startDate'][:10], "%Y-%m-%d")
+            endDate = datetime.strptime(data['endDate'][:10], "%Y-%m-%d")
+            qp = Reservation.query()
+            qp.filter(ndb.AND(Reservation.startDate <= startDate),ndb.AND(Reservation.endDate >= endDate))
+            qp.fetch()
+            
+            for result in qp:
+                print 'R-----'
+                print result.name
+                print result.startDate
+                print result.endDate
 
             # convert dates from strings to Date objects; set month based on start_date
             if data['startDate']:
@@ -258,7 +273,6 @@ class ConferenceApi(remote.Service):
             http_method='POST', name='createReservation')
     def createReservation(self, request):
         """Create new conference."""
-        print 'ENTRE!!!'
         return self._createReservationObject(request)
 
     @endpoints.method(GreetingForm,GreetingForm,path='file',
@@ -272,6 +286,8 @@ class ConferenceApi(remote.Service):
        
 
         return GreetingForm(name="Hola")
+
+
 
 
 

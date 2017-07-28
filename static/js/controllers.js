@@ -273,7 +273,8 @@ conferenceApp.controllers.directive('fileModel', ['$parse', function ($parse){
     $scope.uploadFile = function(){
       $http({
             method : "GET",
-            url : "https://manueloteroapi1.appspot.com/Repo"
+            //url : "https://manueloteroapi1.appspot.com/Repo"
+            url : "http://localhost:8080/Repo"
         }).then(function mySucces(response){
        
             var file = $scope.myFile;
@@ -287,9 +288,12 @@ conferenceApp.controllers.directive('fileModel', ['$parse', function ($parse){
                 headers: {'Content-Type': undefined}
             })
             .success(function(data){
-                console.log("https://manueloteroapi1.appspot.com/view_photo/" + data);
-                $scope.reservation.urlDepositId = "https://manueloteroapi1.appspot.com/view_photo/" + data;
-                $("#hiddenInput").val("https://manueloteroapi1.appspot.com/view_photo/" + data);
+                //console.log("https://manueloteroapi1.appspot.com/view_photo/" + data);
+                console.log("http://localhost:8080/view_photo/" + data);
+                //$scope.reservation.urlDepositId = "https://manueloteroapi1.appspot.com/view_photo/" + data;
+                $scope.reservation.urlDepositId = "http://localhost:8080/view_photo/" + data;
+                //$("#hiddenInput").val("https://manueloteroapi1.appspot.com/view_photo/" + data);
+                $("#hiddenInput").val("http://localhost:8080/view_photo/" + data);
             })
             .error(function(){
                 console.log("ERROR");
@@ -305,12 +309,6 @@ conferenceApp.controllers.controller('CreateReservationCtrl',
     function ($scope, $http, $log, oauth2Provider, HTTP_ERRORS) {
 
         $scope.reservation = $scope.reservation || {};
-
-        
-
-
-
- 
 
         $scope.isValidDates = function(){
             console.log($scope.reservation.startDate);
@@ -328,12 +326,6 @@ conferenceApp.controllers.controller('CreateReservationCtrl',
             console.log(!reservationForm.$isValid && $scope.isValidDates());
             return !reservationForm.$isValid && $scope.isValidDates();
         }
-
-
-        
-      
-
-
 
         $scope.createReservation = function (reservationForm) {
             
@@ -373,6 +365,18 @@ conferenceApp.controllers.controller('CreateReservationCtrl',
                         }
                     });
                 });
+           
+            
+        };
+
+    });
+
+conferenceApp.controllers.controller('MenuCtrl',
+    function ($scope, $http, $log, oauth2Provider, HTTP_ERRORS) {
+
+        $scope.showPhoto = function () {
+            
+           alert();
            
             
         };

@@ -1,6 +1,6 @@
 <div class="container contenedorUno">
   
-  <div class="row contenedorDelMenuPrincipal">
+  <div class="row contenedorDelMenuPrincipal" ng-controller="MenuCtrl">
 
     <div class="col-md-2">
           <div class="logo"></div>
@@ -12,7 +12,7 @@
               <a href="#"><span class="sinOpacity textoDelOpcionEnElMenu">Alojamiento</span></a>
             </li>
             <li>
-              <a href="#"><span class="sinOpacity textoDelOpcionEnElMenu">Fotos</span></a>
+              <a href="#" ng-click="showPhoto()" ><span class="sinOpacity textoDelOpcionEnElMenu">Fotos </span></a>
             </li>
             <li class="divider-vertical">
               
@@ -57,16 +57,44 @@ s
     </div>
 
     </div>
-
-  
-
 </div>
+
 <br>
 <br>
+
+<div class="text-center"><a id="btnReservar" href="#myModal" role="button" class="btn btn-default btnContacteneos" data-toggle="modal">Reserva ahora!</a></div> 
+
+<div class="container-fluid">
+  <div class="row" style="border-bottom: 1px solid #DBDBDB !important;">
+    <div class="col-md-12">
+     <h2>Alojamiento</h2>
+     <h4>Cabaña para cuatro personas</h4>
+    </div>
+  </div>
+
+  <div class="row" style="border-bottom: 1px solid #DBDBDB !important; color: #484848 !important;">
+    <div class="col-md-12">
+     <br>
+     <div><img class="flagIcon" src='https://image.freepik.com/free-icon/bed-with-two-pillows-bottom-view_318-42638.jpg' /> 1 Cama doble</div>
+      <br>
+ <div><img class="flagIcon" src='https://d30y9cdsu7xlg0.cloudfront.net/png/12395-200.png'/> 2 Camas tres cuarto</div>
+ <br>
+  <div><img class="flagIcon" src='http://www.lascoudennes.eu/images/dienst-wc-wc_318-30916.jpg'/> Servico con regadera</div>
+   <br>
+  <div><img class="flagIcon" src='/img/shower.jpg' /> Ducha afuera</div>
+   <br>
+  <div>Valcon con vista al Mar</div>
+   <br>
+  
+    </div>
+  </div>
+
+</div> 
+
 <div class="container-fluid" ng-controller="CreateReservationCtrl">
   <div class="row">
     <div class="col-md-12">
-      <div class="text-center"><a id="btnReservar" href="#myModal" role="button" class="btn btn-default btnContacteneos" data-toggle="modal">Reserva ahora!</a></div> 
+        <!-- <div class="text-center"><a id="btnReservar" href="#myModal" role="button" class="btn btn-default btnContacteneos" data-toggle="modal">Reserva ahora!</a></div>  -->
       <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -166,7 +194,16 @@ s
       </div>
     </div>
   </div>
-</div>
+</div> 
+
+<script>
+       
+$(document).ready(function(){ 
+
+});
+
+</script>
+
 
 
 

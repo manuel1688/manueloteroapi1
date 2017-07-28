@@ -1,0 +1,155 @@
+<div class="container contenedorUno" ng-controller="CreateReservationCtrl">
+  
+  <div class="row contenedorDelMenuPrincipal">
+
+    <div class="col-md-2">
+          <div class="logo"></div>
+    </div>
+    <div class="col-md-10">
+        <div class="navbar navbar-default">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#"><span class="sinOpacity textoDelOpcionEnElMenu">Alojamiento</span></a>
+            </li>
+            <li>
+              <a href="#"><span class="sinOpacity textoDelOpcionEnElMenu">Fotos</span></a>
+            </li>
+            <li class="divider-vertical">
+              
+            </li>
+            <li>
+              <a href="#"><span class="sinOpacity textoDelOpcionEnElMenu">Ubicación</span></a>
+            </li>
+            <li>
+              <a href="#"><span class="sinOpacity textoDelOpcionEnElMenu">Actividades</span></a>
+            </li>
+            <li>
+              <a href="#"><span class="sinOpacity textoDelOpcionEnElMenu">Contáctanos</span></a>
+            </li>
+          </ul>
+
+        </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-md-12">
+      <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default btnContacteneos"><span class="sinOpacity textoBlanco">Contáctanos</span> </button>
+        <button type="button" class="btn btn-default btnContacteneos"> <span class="sinOpacity Contáctanos">506 - 9999 9999</span> </button>
+      </div>
+    </div>
+s
+    </div>
+
+    <div class="row">
+
+    <div class="col-md-12">
+      <div class="btn-group btn-groupFlags" role="group" aria-label="...">
+        <button type="button" class="btn btn-default botonIdioma"><span class="sinOpacity">Idioma</span> </button>
+        <button type="button" class="btn btn-default botonIdioma"> <img class="flagIcon" src='https://lh3.googleusercontent.com/jn2mY9DMN64jhHgLJOshCUvX4nPu3d26IF6RO7JpDB2W-AUvy0JNt1s08yRsKsFoLjTT=h310' /></button>
+        <button type="button" class="btn btn-default botonIdioma"> <img class="flagIcon" src='https://cdn1.iconfinder.com/data/icons/us-flags/920/United_States-512.png' /></button>
+      </div>
+    </div>
+
+    </div>
+
+  
+
+</div>
+<br>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center"><a id="btnReservar" href="#myModal" role="button" class="btn btn-default btnContacteneos" data-toggle="modal">Reserva ahora!</a></div> 
+      <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="myModalLabel">Reservación</h3>
+            </div>
+            <div class="modal-body">
+              <form name="reservationForm" novalidate role="form">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class='col-sm-4'>Llegada</div>
+                    <div class='col-sm-8'>
+                              <div class="form-group" ng-controller="DatepickerCtrl">
+                    <label for="startDate">Start Date</label>
+                    <p class="input-group">
+                        <input id="startDate" type="text" class="form-control" datepicker-popup="{{format}}"
+                               ng-model="reservation.startDate" is-open="opened"
+                               datepicker-options="dateOptions"
+                               close-text="Close"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" ng-click="open($event)"><i
+                                class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                    </p>
+                </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class='col-sm-4'>Salida</div>
+                      <div class='col-sm-8'>
+                          <div class="form-group" ng-controller="DatepickerCtrl">
+                    <label for="endDate">End Date</label>
+                    <span class="label label-danger"
+                        ng-show="!isValidDates()">End Date must be later or equal to Start Date!</span>
+                    <p class="input-group">
+                        <input id="endDate" type="text" class="form-control" datepicker-popup="{{format}}"
+                               ng-model="reservation.endDate" is-open="opened"
+                               datepicker-options="dateOptions"
+                               close-text="Close"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" ng-click="open($event)"><i
+                                class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </span>
+                    </p>
+                </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class='col-sm-4'>Cabaña</div>
+                    <div class='col-sm-8'>
+                      <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">1<span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="row">
+                    <div class='col-sm-4'>Nombre</div>
+                    <div class='col-sm-8'>
+                      <div class="form-group">
+                        <label><span></span></label>
+                        <span></span>
+                        <input type="text" class="form-control" id="usr">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary btnContacteneos">Relizar la reservación</button>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
